@@ -1,10 +1,13 @@
 <!DOCTYPE html>
-<html>
-
+<html lang="en">
 <head>
-    <meta charset="utf-8">
-    <title>Лабораторные работы</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <style>
+        h1{
+            text-align: center;
+        }
+
         .title {
             text-align: center;
             border-bottom: solid;
@@ -36,22 +39,24 @@
             color: #a00;
         }
     </style>
+    <title>Лаба №5</title>
 </head>
-
 <body>
     <div class="title">
-        <h1>
-            ЛАБОРАТОРНЫЕ РАБОТЫ
-        </h1>
-        <h3>
-            Выполнил: Янукович Евгений Дмитриевич
-        </h3>
+        <h1>Лабораторная работа №5</h1>
+        <hr>
     </div>
+
     <div class="menu">
-        <a href="labwork2-3/lab2-3.php" class="c">Лабораторная работа № 2-3</a>
-        <a href="labwork4/lab4.php" class="c">Лабораторная работа № 4</a>
-        <a href="labwork5/lab5.php" class="c">Лабораторная работа № 5</a>
+        <a href="tasks/task1.php" class="c">Задание №1</a>
+        <a href="tasks/task2.php" class="c">Задание №2</a>
+        <a href="tasks/task3.php" class="c">Задание №3</a>
+        <a href="tasks/task4.php" class="c">Задание №4</a>
+        <a href="tasks/task5.php" class="c">Задание №5</a>
+        <a href="tasks/task6.php" class="c">Задание №6</a>
+        <a href="tasks/task7.php" class="c">Задание №7</a>
+        <a href="tasks/task8.php" class="c">Задание №8</a>
+        <a href="tasks/task9.php" class="c">Задание №9</a>
     </div>
 </body>
-
 </html>
