@@ -25,6 +25,4 @@
 |16||||||||||
 
 Нашли ошибку? Свяжитесь со мной: <br/>
-Почта: evgen.yanukovich@gmail.com <br/>
-Телефон: +375295980322 <br/>
 Telegram: @evyanukovich <br/>
