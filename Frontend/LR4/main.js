@@ -9,6 +9,7 @@ var car = {
     manufacturer: "manufacturer",
     model: "model"
 };
+var car9 = {};
 var car1 = {
     manufacturer: "manufacturer",
     model: "model"

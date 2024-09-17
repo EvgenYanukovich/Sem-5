@@ -15,8 +15,8 @@ const array: Student[] = [
 
 //2
 interface CarsType {
-    manufacturer: string;
-    model: string;
+    manufacturer?: string;
+    model?: string;
 }
 
 let car: CarsType = {
@@ -28,6 +28,8 @@ let car: CarsType = {
 interface ArrayCarsType {
     cars: CarsType[];
 }
+
+const car9: CarsType = {}
 
 const car1: CarsType = {
     manufacturer: "manufacturer",
