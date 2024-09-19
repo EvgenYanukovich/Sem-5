@@ -57,6 +57,7 @@
         <a href="tasks/task7.php" class="c">Задание №7</a>
         <a href="tasks/task8.php" class="c">Задание №8</a>
         <a href="tasks/task9.php" class="c">Задание №9</a>
+        <a href="tasks/task10.php" class="c">Задание №10</a>
     </div>
 </body>
 </html>
