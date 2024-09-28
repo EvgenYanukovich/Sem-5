@@ -37,17 +37,17 @@ CREATE TABLE [Schema_Yanukovich].[Details] (
 	TypeDetail NVARCHAR(10)
 );
 
-GRANT SELECT ON [Schema_yanukovich].[Details] TO [MyRole3];
+GRANT SELECT ON [Schema_Yanukovich].[Details] TO [MyRole3];
 
 ----------6----------
 CREATE LOGIN [User3_Yanukovich] WITH PASSWORD = '1234';
-CREATE USER [User3_Yanukovich] FOR LOGIN [User3_yanukovich] WITH DEFAULT_SCHEMA = [Schema_yanukovich];
+CREATE USER [User3_Yanukovich] FOR LOGIN [User3_Yanukovich] WITH DEFAULT_SCHEMA = [Schema_Yanukovich];
 
 SELECT * FROM sys.schemas;
-SELECT * FROM [Schema_yanukovich].[Details];
+SELECT * FROM [Schema_Yanukovich].[Details];
 
-DROP TABLE [Schema_yanukovich].[Details];
-DROP SCHEMA [Schema_yanukovich];
+DROP TABLE [Schema_Yanukovich].[Details];
+DROP SCHEMA [Schema_Yanukovich];
 
 SELECT * FROM sys.schemas WHERE name = 'Schema_yanukovich';
 
@@ -65,3 +65,53 @@ SELECT * FROM [Base_Yanukovich].[dbo].[vw_WorkerDetails];
 SELECT * FROM dbo.Workers;
 
 DROP VIEW [vw_WorkerDetails];
+
+----------8----------
+CREATE ROLE [Admin];
+CREATE ROLE [DataEntry];
+CREATE ROLE [Viewer];
+
+
+CREATE LOGIN [admin_user] WITH PASSWORD = '1234';
+CREATE USER [admin_user] FOR LOGIN [admin_user];
+
+CREATE LOGIN [data_entry_user] WITH PASSWORD = '1234';
+CREATE USER [data_entry_user] FOR LOGIN [data_entry_user];
+
+CREATE LOGIN [viewer_user] WITH PASSWORD = '1234';
+CREATE USER [viewer_user] FOR LOGIN [viewer_user];
+
+
+ALTER ROLE [Admin] ADD MEMBER [admin_user];
+ALTER ROLE [DataEntry] ADD MEMBER [data_entry_user];
+ALTER ROLE [Viewer] ADD MEMBER [viewer_user];
+
+--Разрешения для админа
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON dbo.Workers TO [Admin];
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON dbo.Operations TO [Admin];
+GRANT SELECT, INSERT, UPDATE, DELETE, ALTER ON dbo.WorkDetails TO [Admin];
+
+INSERT INTO dbo.Workers (LastName, FirstName, Phone, Experience)
+VALUES ('Smirnov', 'Sergey', '+375299999999', 4);
+
+DELETE FROM dbo.Workers WHERE WorkerID = 1;
+
+
+--Разрешения для дата энтри
+GRANT SELECT, INSERT, UPDATE ON dbo.Workers TO [DataEntry];
+GRANT SELECT, INSERT, UPDATE ON dbo.Operations TO [DataEntry];
+GRANT SELECT, INSERT, UPDATE ON dbo.WorkDetails TO [DataEntry];
+INSERT INTO dbo.Workers (LastName, FirstName, Phone, Experience)
+VALUES ('Petrov', 'Alexey', '+375292222222', 2);
+
+DELETE FROM dbo.Workers WHERE WorkerID = 2; --ошибка из-за DENY
+
+--разешение для вьювера
+GRANT SELECT ON dbo.Workers TO [Viewer];
+GRANT SELECT ON dbo.Operations TO [Viewer];
+GRANT SELECT ON dbo.WorkDetails TO [Viewer];
+
+SELECT * FROM dbo.Workers;
+
+INSERT INTO dbo.Workers (LastName, FirstName, Phone, Experience)
+VALUES ('Ivanov', 'Ivan', '+375291234567', 5); --ошибка из-за DENY

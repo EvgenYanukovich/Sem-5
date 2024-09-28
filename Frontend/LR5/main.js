@@ -61,4 +61,4 @@ async function processNumbers() {
     console.log(newResult); 
 }
 
-processNumbers();
+console.log(processNumbers());
