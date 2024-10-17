@@ -20,7 +20,6 @@ const Clock: React.FC = () => {
   const minuteDegrees = (minutes / 60) * 360 + (seconds / 60) * 6;
   const hourDegrees = ((hours % 12) / 12) * 360 + (minutes / 60) * 30;
 
-  // Генерация массива из 60 черточек
   const ticks = Array.from({ length: 60 }, (_, i) => i);
 
   return (
@@ -31,8 +30,8 @@ const Clock: React.FC = () => {
           {ticks.map((tick, i) => (
             <div
               key={i}
-              className={`tick`} // Каждая 5-я черточка длиннее
-              style={{ transform: `rotate(${i * 6}deg) translateY(-120px)` }} // Поворот и смещение
+              className={`tick`} 
+              style={{ transform: `rotate(${i * 6}deg) translateY(-120px)` }} 
             />
           ))}
         </div>
@@ -40,8 +39,8 @@ const Clock: React.FC = () => {
           {ticks.map((tick2, i) => (
             <div
               key={i}
-              className={`tick2`} // Каждая 5-я черточка длиннее
-              style={{ transform: `rotate(${i * 30}deg) translateY(-120px)` }} // Поворот и смещение
+              className={`tick2`} 
+              style={{ transform: `rotate(${i * 30}deg) translateY(-120px)` }}
             />
           ))}
         </div>

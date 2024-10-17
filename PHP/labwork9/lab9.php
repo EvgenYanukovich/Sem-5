@@ -48,11 +48,11 @@
     </div>
 
     <div class="menu">
-        <a href="tasks/task1.php" class="c">Задание №1</a>
-        <a href="tasks/task2.php" class="c">Задание №2</a>
-        <a href="tasks/task3.php" class="c">Задание №3</a>
-        <a href="tasks/task4.php" class="c">Задание №4</a>
-        <a href="tasks/task5.php" class="c">Задание №5</a>
+        <a href="tasks/task1/form1.php" class="c">Задание №1</a>
+        <a href="tasks/task2/form2.php" class="c">Задание №2</a>
+        <a href="tasks/task3/form3.php" class="c">Задание №3</a>
+        <a href="tasks/task4/form4.php" class="c">Задание №4</a>
+        <a href="tasks/task5/form5.php" class="c">Задание №5</a>
     </div>
 </body>
 </html>
