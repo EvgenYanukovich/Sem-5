@@ -1,4 +1,4 @@
-<form action="result1.php" method="POST">
+<form action="" method="POST">
     <label>Email:</label>
     <input type="email" name="email" required><br>
 
