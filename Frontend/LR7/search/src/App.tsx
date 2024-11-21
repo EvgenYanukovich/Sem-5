@@ -1,4 +1,4 @@
-
+//App
 import React, { useState } from "react";
 import PRODUCTS from "./state/state";
 import SearchBar from "./components/SearchBar";

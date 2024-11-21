@@ -1,0 +1,45 @@
+body {
+    margin: 0;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background-color: black;
+    color: #87CEFA; 
+    font-family: Arial, sans-serif;
+}
+
+.container {
+    width: 300px;
+    border: 2px solid #87CEFA;
+    padding: 20px;
+    text-align: center;
+    border-radius: 10px;
+}
+
+h1 {
+    font-size: 5rem;
+    margin: 20px 0;
+}
+
+button {
+    margin: 10px;
+    padding: 10px 20px;
+    font-size: 1.5rem;
+    border: 2px solid #87CEFA;
+    border-radius: 5px;
+    background-color: #87CEFA;
+    color: black;
+    cursor: pointer;
+    transition: 0.3s;
+}
+
+button:disabled {
+    background-color: gray;
+    color: #cfcfcf;
+    cursor: not-allowed;
+}
+
+button:hover:not(:disabled) {
+    background-color: #4682B4; /* Темно-голубой цвет при наведении */
+}
