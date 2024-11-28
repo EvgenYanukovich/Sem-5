@@ -1,24 +1,21 @@
 import React, { useState } from "react";
 import Button from "./Button";
-import styles from "./Clicker.module.css";
+import styles from "./Counter.module.css";
 
 const Counter: React.FC = () => {
     const [count, setCount] = useState<number>(0);
 
-    const increase = (): void => setCount((prevCount) => prevCount + 1);
-    const reset = (): void => setCount(0);
-
     return (
         <div className={styles.container}>
-            <h1>{count}</h1>
+            <h1 style={{ color: count === 5 ? "red" : "#87CEFA" }}>{count}</h1>
             <Button 
                 title="inc" 
-                callback={increase} 
+                callback={() => setCount((prevCount) => prevCount + 1)} 
                 disabled={count >= 5} 
             />
             <Button 
                 title="reset" 
-                callback={reset} 
+                callback={() => setCount(0)} 
                 disabled={count === 0} 
             />
         </div>

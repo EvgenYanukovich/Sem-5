@@ -35,11 +35,11 @@ button {
 }
 
 button:disabled {
-    background-color: gray;
+    background-color: rgb(1, 36, 76);
     color: #cfcfcf;
     cursor: not-allowed;
 }
 
 button:hover:not(:disabled) {
-    background-color: #4682B4; /* Темно-голубой цвет при наведении */
+    background-color: #4682B4; 
 }
